@@ -29,8 +29,19 @@ var valores = extractValues(objeto);
 */
 
 function arrayToLengthCounters(array) {
-  // Tu código aquí
+  var result = {};
+
+  for (var i = 0; i < array.length; i++) {
+    var key = array[i];
+    var value = key.length;
+    result[key] = value;
+  }
+
+  return result;
 }
+var palabras = ["gato", "perro", "elefante"];
+var contadores = arrayToLengthCounters(palabras);
+
 
 /*  
   Ejercicio 3: 
