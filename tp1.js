@@ -6,8 +6,19 @@
 */
 
 function extractValues(data) {
-  // Tu código aquí
+  var values = [];
+
+  for (var key in data) {
+    if (Object.prototype.hasOwnProperty.call(data, key)) {
+      values.push(data[key]);
+    }
+  }
+
+  return values;
 }
+
+var objeto = { a: 1, b: 2, c: 3 };
+var valores = extractValues(objeto);
 
 /*  
   Ejercicio 2: 
@@ -36,9 +47,9 @@ function findKeysInCommon(objeto1, objeto2) {
 // Llamamos a las funciones y mostramos los resultados
 
 function main() {
-  console.log(extractValues({a: 1, b: 2, c: 3}));
-  console.log(arrayToLengthCounters(['gato', 'perro', 'elefante']));
-  console.log(findKeysInCommon({a: 1, b: 2, c: 3}, {b: 4, c: 5, d: 6}));
+  console.log(extractValues({ a: 1, b: 2, c: 3 }));
+  console.log(arrayToLengthCounters(["gato", "perro", "elefante"]));
+  console.log(findKeysInCommon({ a: 1, b: 2, c: 3 }, { b: 4, c: 5, d: 6 }));
 }
 
 main();
