@@ -42,7 +42,6 @@ function arrayToLengthCounters(array) {
 var palabras = ["gato", "perro", "elefante"];
 var contadores = arrayToLengthCounters(palabras);
 
-
 /*  
   Ejercicio 3: 
   Implementar la función 'findKeysInCommon' que toma dos objetos y retorna un array con los nombres de las 
@@ -52,8 +51,22 @@ var contadores = arrayToLengthCounters(palabras);
 */
 
 function findKeysInCommon(objeto1, objeto2) {
-  // Tu código aquí
+  var keys1 = Object.keys(objeto1);
+  var keys2 = Object.keys(objeto2);
+  var keysEnComun = [];
+
+  for (var i = 0; i < keys1.length; i++) {
+    var key = keys1[i];
+    if (keys2.includes(key)) {
+      keysEnComun.push(key);
+    }
+  }
+
+  return keysEnComun;
 }
+var objeto1 = { a: 1, b: 2, c: 3 };
+var objeto2 = { b: 4, c: 5, d: 6 };
+var keysComunes = findKeysInCommon(objeto1, objeto2);
 
 // Llamamos a las funciones y mostramos los resultados
 
